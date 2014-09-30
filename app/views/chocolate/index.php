@@ -1,3 +1,10 @@
+<form class="well" method="post" action="<?php eh(url('chocolate/index')) ?>">
+    <label>Input string</label>
+    <input type="text" class="span10" name="choco_string" title="<?php eh(Param::get('choco_string')) ?>">
+    <br />
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
 <h2>Problem Statement</h2>
 <p>You just bought a very delicious chocolate bar from a local store. This chocolate bar consists of N squares, numbered 0 through N-1. All the squares are arranged in a single row. There is a letter carved on each square. You are given a String letters. The i-th character of letters denotes the letter carved on the i-th square (both indices are 0-based).</p>
 <p>You want to share this delicious chocolate bar with your best friend. At first, you want to give him the whole bar, but then you remembered that your friend only likes a chocolate bar without repeated letters. Therefore, you want to remove zero or more squares from the beginning of the bar, and then zero or more squares from the end of the bar, in such way that the remaining bar will contain no repeated letters.</p>
