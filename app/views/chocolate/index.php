@@ -1,3 +1,10 @@
+<?php if ($remaining_bars): ?>
+    <div class="alert alert-block alert-success">
+    <h4 class="alert-heading">Result</h4>
+    <div>Maximum possible length of chocolate bar:  <?php eh($remaining_bars) ?></div>
+    </div>
+<?php endif ?>
+
 <?php if ($choco->hasError()): ?>
     <div class="alert alert-block">
 
@@ -18,7 +25,7 @@
 
 <form class="well" method="post" action="<?php eh(url('chocolate/index')) ?>">
     <label>Input string</label>
-    <input type="text" class="span10" name="raw_string" title="<?php eh(Param::get('raw_string')) ?>">
+    <input type="text" class="span11" name="raw_string" title="<?php eh(Param::get('raw_string')) ?>">
     <br />
     <button type="submit" class="btn btn-primary" name="submit">Submit</button>
 </form>
