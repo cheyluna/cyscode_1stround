@@ -1,8 +1,26 @@
+<?php if ($choco->hasError()): ?>
+    <div class="alert alert-block">
+
+    <h4 class="alert-heading">Validation error!</h4>
+    <?php if (!empty($choco->validation_errors['raw_string']['length'])): ?>
+        <div><em>String</em> must be betwen
+        <?php eh($choco->validation['raw_string']['length'][1]) ?> and
+        <?php eh($choco->validation['raw_string']['length'][2]) ?> characters.
+        </div>
+    <?php endif ?>
+
+    <?php if (!empty($choco->validation_errors['raw_string']['format'])): ?>
+        <div><em>String</em> must contain lowercase letters only.</div>
+    <?php endif ?>
+    
+    </div>
+<?php endif ?>
+
 <form class="well" method="post" action="<?php eh(url('chocolate/index')) ?>">
     <label>Input string</label>
-    <input type="text" class="span10" name="choco_string" title="<?php eh(Param::get('choco_string')) ?>">
+    <input type="text" class="span10" name="raw_string" title="<?php eh(Param::get('raw_string')) ?>">
     <br />
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary" name="submit">Submit</button>
 </form>
 
 <h2>Problem Statement</h2>
