@@ -14,7 +14,12 @@ function readable_text($string)
 
 function letters_only($string)
 {
-    return preg_match ('/^[a-zA-Z\s]+$/',$string);
+    return preg_match ('/^[a-zA-Z\s]+$/', $string);
+}
+
+function lower_case_letters_only($string)
+{
+    return preg_match ('/^[a-z]+$/', $string);
 }
 
 function email_valid($email)
