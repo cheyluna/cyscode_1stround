@@ -21,4 +21,21 @@ class Chocolate extends AppModel
             throw new ValidationException('invalid string');
         }
     }
+
+    public function getRemainingBars($raw_string)
+    {
+        $array = $this->convertToArray($raw_string);
+        $remaining_bars = $this->getArrayCount($array);
+        return $remaining_bars;
+    }
+
+    public function convertToArray($raw_string)
+    {
+        return str_split($raw_string);
+    }
+
+    public function getArrayCount($string_array)
+    {
+        return count($string_array);
+    }
 }
